@@ -27,7 +27,7 @@ const projects: Project[] = [
       "Explores advanced RAG architectures with intelligent workflows, vector embeddings, and real-time retrieval for production-grade AI applications.",
     tech: ["Python",  "Prompt Engineering", "GroqAPI", "FastAPI"],
     github: "https://github.com/tejashwini-malge/aira",
-    demo: "#",
+    demo: "https://aira-k5no.onrender.com/",
     icon: Cpu,
     gradient: "from-accent-cyan to-blue-600",
     glow: "hover:shadow-accent-cyan/20",
