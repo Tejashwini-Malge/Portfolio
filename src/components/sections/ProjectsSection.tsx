@@ -27,7 +27,7 @@ const projects: Project[] = [
     longDesc:
       "Explores advanced RAG architectures with intelligent workflows, vector embeddings, and real-time retrieval for production-grade AI applications.",
     tech: ["Python",  "Prompt Engineering", "GroqAPI", "FastAPI"],
-    github: "https://github.com/tejashwini-malge/aira",
+    github: "https://github.com/Tejashwini-Malge/Aira",
     demo: "https://aira-k5no.onrender.com/",
     demoNote: "First load may take ~30-60s to wake up",
     icon: Cpu,
@@ -42,7 +42,7 @@ const projects: Project[] = [
     longDesc:
       "Built with autonomous AI agents that collaborate to research topics, generate content, optimize for SEO, and manage publishing pipelines.",
     tech: ["Python", "AI Agents", "LangGraph", "GroqAI", "CrewAI"],
-    github: "https://github.com/tejashwini-malge/blogagents",
+    github: "https://github.com/Tejashwini-Malge/BlogAgent",
     demo: "#",
     icon: Bot,
     gradient: "from-accent-violet to-accent-pink",
@@ -56,7 +56,7 @@ const projects: Project[] = [
     longDesc:
       "Complete LinkedIn-inspired application with JWT auth, RESTful APIs, image uploads, post reactions, and a responsive UI.",
     tech: ["React", "Node.js", "MongoDB", "Express", "JWT", "Cloudinary"],
-    github: "https://github.com/tejashwini-malge/linkedin-clone",
+    github: "https://github.com/Tejashwini-Malge/Linkify",
     demo: "#",
     icon: Users,
     gradient: "from-accent-emerald to-teal-500",
@@ -70,7 +70,7 @@ const projects: Project[] = [
     longDesc:
       "Intelligent fraud prevention system with ML classification, anomaly detection, risk scoring, and real-time alert dashboards.",
     tech: ["Flutter", "Kotlin", "Whisper", "Gemma4", "Claude"],
-    github: "https://github.com/tejashwini-malge/kavach",
+    github: "https://github.com/Tejashwini-Malge/kavach-FraudCallDetection",
     demo: "#",
     icon: Shield,
     gradient: "from-accent-pink to-orange-500",
