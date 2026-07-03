@@ -16,6 +16,7 @@ interface Project {
   gradient: string;
   glow: string;
   tag: string;
+  demoNote?: string;
 }
 
 const projects: Project[] = [
@@ -28,6 +29,7 @@ const projects: Project[] = [
     tech: ["Python",  "Prompt Engineering", "GroqAPI", "FastAPI"],
     github: "https://github.com/tejashwini-malge/aira",
     demo: "https://aira-k5no.onrender.com/",
+    demoNote: "First load may take ~30-60s to wake up",
     icon: Cpu,
     gradient: "from-accent-cyan to-blue-600",
     glow: "hover:shadow-accent-cyan/20",
@@ -156,6 +158,11 @@ export default function ProjectsSection() {
                   Live Demo
                 </a>
               </div>
+              {project.demoNote && (
+                <p className="text-xs text-text-muted font-body mt-3 text-center">
+                  {project.demoNote}
+                </p>
+              )}
             </div>
           </motion.div>
         ))}
