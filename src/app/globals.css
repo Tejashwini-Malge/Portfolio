@@ -138,6 +138,8 @@ body {
   position: absolute;
   inset: -1px;
 
+  pointer-events: none;
+
   border-radius: inherit;
   padding: 1px;
 
