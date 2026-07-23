@@ -6,7 +6,7 @@ import SectionWrapper from "../ui/SectionWrapper";
 
 export default function ContactSection() {
   return (
-    <SectionWrapper id="contact">
+    <SectionWrapper id="contact" tone="b">
       {/* Glow */}
       <div className="absolute inset-0 bg-gradient-to-r from-accent-cyan/3 via-accent-violet/3 to-accent-pink/3 rounded-3xl" />
 
@@ -25,22 +25,22 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-display text-4xl md:text-6xl font-bold text-text-primary mb-6"
+          className="font-display text-5xl md:text-7xl font-bold text-text-primary mb-6"
         >
-          Let&apos;s Build{" "}
-          <span className="gradient-text-cyan">Something</span>
+          Let&apos;s Talk{" "}
+          <span className="gradient-text-cyan">About</span>
           <br />
-          Impactful Together
+          Something Interesting
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="font-body text-text-secondary text-lg max-w-xl mx-auto"
+          className="font-body text-text-primary/80 text-lg max-w-xl mx-auto"
         >
-          Whether you&apos;re looking for an AI intern, a speaker, a collaborator, or just want
-          to talk about building the future — I&apos;m always open.
+          Whether you&apos;re looking for an intern, a speaker, a project partner,
+          or just want to talk about AI over chai — I&apos;d love to hear from you.
         </motion.p>
       </div>
 
@@ -50,8 +50,8 @@ export default function ContactSection() {
           {
             icon: Mail,
             label: "Email",
-            value: "tejashwini@email.com",
-            href: "mailto:tejashwini@email.com",
+            value: "trmalge@gmail.com",
+            href: "mailto:trmalge@gmail.com",
             gradient: "from-accent-cyan to-blue-600",
             desc: "Best for detailed conversations",
           },
@@ -81,8 +81,10 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.12 }}
-            whileHover={{ y: -8, scale: 1.02 }}
-            className="gradient-border glass-card rounded-2xl p-6 flex flex-col gap-4 group transition-all duration-300 cursor-pointer"
+            whileHover={{ y: -8, scale: 1.02, rotate: 0 }}
+            className={`gradient-border glass-card rounded-2xl p-6 flex flex-col gap-4 group transition-all duration-300 cursor-pointer ${
+              i % 2 === 0 ? "scrap-tilt-l" : "scrap-tilt-r"
+            }`}
           >
             <div
               className={`w-12 h-12 rounded-xl bg-gradient-to-br ${contact.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}
@@ -116,16 +118,15 @@ export default function ContactSection() {
 
         <div className="relative">
           <Zap className="text-accent-cyan mx-auto mb-4" size={36} />
-          <h3 className="font-display text-2xl md:text-3xl font-bold text-text-primary mb-4">
-            Let&apos;s build impactful AI systems together
+          <h3 className="font-display text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            Got something in mind? Let&apos;s talk.
           </h3>
           <p className="font-body text-text-secondary mb-8 max-w-md mx-auto">
-            Open to AI internships, speaking engagements, startup collaborations,
-            and personal branding opportunities.
+            Open to internships, speaking invites, and interesting collaborations.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:tejashwini@email.com"
+              href="mailto:trmalge@gmail.com"
               className="shimmer-btn flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet text-white font-medium font-body hover:shadow-2xl hover:shadow-accent-cyan/30 transition-all duration-300 hover:scale-105"
             >
               <Send size={16} />

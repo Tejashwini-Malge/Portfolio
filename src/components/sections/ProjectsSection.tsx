@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, ExternalLink, Cpu, Bot, Users, Shield } from "lucide-react";
+import { Github, ExternalLink, Cpu, Bot, Eye, Hand } from "lucide-react";
 import SectionWrapper from "../ui/SectionWrapper";
 import SectionHeader from "../ui/SectionHeader";
 
@@ -23,60 +23,56 @@ const projects: Project[] = [
   {
     title: "AIRA",
     description:
-      "AI-powered intelligent assistant.",
+      "An assistant built with LLM-powered agents — a lot of prompt tweaking to get it to actually behave.",
     longDesc:
-      "Explores advanced RAG architectures with intelligent workflows, vector embeddings, and real-time retrieval for production-grade AI applications.",
-    tech: ["Python",  "Prompt Engineering", "GroqAPI", "FastAPI"],
+      "My first real dive into agentic AI: chaining LLM calls, giving them tools to act on, and enough iteration to make it feel less like a demo and more like something worth using.",
+    tech: ["Python", "Prompt Engineering", "GroqAPI", "FastAPI"],
     github: "https://github.com/Tejashwini-Malge/Aira",
     demo: "https://aira-k5no.onrender.com/",
     demoNote: "First load may take ~30-60s to wake up",
     icon: Cpu,
     gradient: "from-accent-cyan to-blue-600",
     glow: "hover:shadow-accent-cyan/20",
-    tag: "RAG • Agentic AI",
+    tag: "Agentic AI",
   },
   {
     title: "BlogAgents",
     description:
-      "Multi-agent AI system that automates intelligent content creation workflows — from research to writing to publishing.",
+      "A handful of agents that research, draft, and publish blog posts with minimal hand-holding from me.",
     longDesc:
-      "Built with autonomous AI agents that collaborate to research topics, generate content, optimize for SEO, and manage publishing pipelines.",
-    tech: ["Python", "AI Agents", "LangGraph", "GroqAI", "CrewAI"],
+      "Built with LangGraph and CrewAI — separate agents handle research, writing, and publishing, and mostly stay out of each other's way.",
+    tech: ["Python", "LangGraph", "GroqAI", "CrewAI"],
     github: "https://github.com/Tejashwini-Malge/BlogAgent",
     demo: "https://web-production-81fb1.up.railway.app/",
     demoNote: "First load may take ~30-60s to wake up",
     icon: Bot,
     gradient: "from-accent-violet to-accent-pink",
     glow: "hover:shadow-accent-violet/20",
-    tag: "Multi-Agent • Automation",
+    tag: "Multi-Agent",
   },
   {
-    title: "LinkedIn Clone",
-    description:
-      "Full-stack professional networking platform with authentication, dynamic feed, real-time connections, and profile management.",
-    longDesc:
-      "Complete LinkedIn-inspired application with JWT auth, RESTful APIs, image uploads, post reactions, and a responsive UI.",
-    tech: ["React", "Node.js", "MongoDB", "Express", "JWT", "Cloudinary"],
-    github: "https://github.com/Tejashwini-Malge/Linkify",
+    title: "Imparency",
+    description: "Placeholder — real description coming soon.",
+    longDesc: "Placeholder — details coming soon.",
+    tech: ["TBD"],
+    github: "#",
     demo: "#",
-    icon: Users,
+    icon: Eye,
     gradient: "from-accent-emerald to-teal-500",
     glow: "hover:shadow-accent-emerald/20",
-    tag: "Full Stack • Social",
+    tag: "Coming Soon",
   },
   {
-    title: "Kavach",
-    description:
-      "AI-driven fraud detection application that identifies suspicious patterns in real-time transactions using ML models.",
-    longDesc:
-      "Intelligent fraud prevention system with ML classification, anomaly detection, risk scoring, and real-time alert dashboards.",
-    tech: ["Flutter", "Kotlin", "Whisper", "Gemma4", "Claude"],
-    github: "https://github.com/Tejashwini-Malge/kavach-FraudCallDetection",
+    title: "SignLanguage",
+    description: "Placeholder — real description coming soon.",
+    longDesc: "Placeholder — details coming soon.",
+    tech: ["TBD"],
+    github: "#",
     demo: "#",
-    icon: Shield,
+    icon: Hand,
     gradient: "from-accent-pink to-orange-500",
     glow: "hover:shadow-accent-pink/20",
-    tag: "ML • Security",
+    tag: "Coming Soon",
   },
 ];
 
@@ -86,7 +82,7 @@ export default function ProjectsSection() {
       <SectionHeader
         tag="// projects"
         title="Things I've Built"
-        subtitle="Production-ready AI systems and full-stack applications with real-world impact."
+        subtitle="A few things I've made. Two are live, two are still cooking."
       />
 
       <div className="grid md:grid-cols-2 gap-6">
@@ -97,8 +93,10 @@ export default function ProjectsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.12 }}
-            whileHover={{ y: -8 }}
-            className={`gradient-border glass-card rounded-2xl overflow-hidden group transition-all duration-400 shadow-xl ${project.glow} cursor-default`}
+            whileHover={{ y: -8, rotate: 0 }}
+            className={`gradient-border glass-card rounded-2xl overflow-hidden group transition-all duration-400 shadow-xl ${project.glow} cursor-default ${
+              i % 2 === 0 ? "scrap-tilt-l" : "scrap-tilt-r"
+            }`}
           >
             {/* Card Header */}
             <div className={`h-1.5 bg-gradient-to-r ${project.gradient}`} />
@@ -117,7 +115,7 @@ export default function ProjectsSection() {
               </div>
 
               {/* Title */}
-              <h3 className="font-display text-2xl font-bold text-text-primary mb-3 group-hover:gradient-text-cyan transition-colors">
+              <h3 className="font-display text-3xl font-bold text-text-primary mb-3 group-hover:gradient-text-cyan transition-colors">
                 {project.title}
               </h3>
 

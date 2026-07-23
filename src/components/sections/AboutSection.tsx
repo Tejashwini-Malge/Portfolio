@@ -9,22 +9,22 @@ import SectionHeader from "../ui/SectionHeader";
 const pillars = [
   {
     icon: Brain,
-    title: "AI Engineer",
-    desc: "Exploring RAG, GenAI, and Agentic systems to build intelligent, autonomous workflows.",
+    title: "Tinkerer",
+    desc: "Poking at RAG, GenAI, and agent systems until they actually work.",
     color: "from-accent-cyan to-blue-500",
     glow: "shadow-accent-cyan/20",
   },
   {
     icon: Mic,
     title: "Speaker",
-    desc: "Communicating complex AI concepts to diverse audiences with clarity and passion.",
+    desc: "Explaining AI to a room without making it sound scarier than it is.",
     color: "from-accent-violet to-accent-pink",
     glow: "shadow-accent-violet/20",
   },
   {
     icon: Users,
     title: "Mentor",
-    desc: "Empowering 750+ students with knowledge, guidance, and a growth mindset.",
+    desc: "Talking 750+ students through their next step — one conversation at a time.",
     color: "from-accent-emerald to-teal-400",
     glow: "shadow-accent-emerald/20",
   },
@@ -41,11 +41,11 @@ export default function AboutSection() {
     <SectionWrapper id="about">
       <SectionHeader
         tag="// about me"
-        title="Building at the Intersection of AI & Human Soul"
-        subtitle=" I love buidling things matter and talking about those things."
+        title="Somewhere Between Code and Conversations"
+        subtitle="I like building things that matter, and talking about why they matter."
       />
 
-      <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
         
         {/* Profile Image */}
         <motion.div
@@ -55,19 +55,16 @@ export default function AboutSection() {
           transition={{ duration: 0.7 }}
           className="flex justify-center"
         >
-          <div className="relative">
-            
-            {/* Glow */}
-            <div className="absolute inset-0 rounded-[30px] bg-gradient-to-br from-accent-cyan via-accent-violet to-accent-pink blur-2xl opacity-30 animate-pulse" />
-
-            {/* Image Frame */}
-            <div className="relative glass-card rounded-[30px] p-3 border border-white/10">
+          <div className="relative scrap-tilt-l">
+            {/* Polaroid frame */}
+            <div className="relative glass-card torn-edge-bottom rounded-sm p-3 pb-14">
+              <div className="washi-tape" />
               <Image
                 src="/profile.jpeg"
                 alt="Tejashwini Malge"
                 width={420}
                 height={520}
-                className="rounded-[24px] object-cover"
+                className="rounded-sm object-cover"
                 priority
               />
             </div>
@@ -82,8 +79,8 @@ export default function AboutSection() {
           transition={{ duration: 0.7 }}
           className="space-y-6"
         >
-          <div className="glass-card rounded-2xl p-8 relative overflow-hidden">
-            
+          <div className="glass-card rounded-2xl p-8 relative overflow-hidden scrap-tilt-r">
+
             {/* Decorative gradient */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-cyan via-accent-violet to-accent-pink" />
 
@@ -92,21 +89,23 @@ export default function AboutSection() {
               <span className="text-text-primary font-medium">
                 final-year engineering student
               </span>{" "}
-              with an obsession for building things that think. From{" "}
+              who got hooked on building things that think —{" "}
               <span className="text-accent-cyan">
                 RAG pipelines
               </span>{" "}
-              to{" "}
+              ,{" "}
               <span className="text-accent-violet">
                 agentic workflows
               </span>
-              , I&apos;m on a mission to make AI not just powerful  but purposeful.
+              , the whole rabbit hole. I care less about AI being impressive
+              and more about it being useful to someone.
             </p>
 
             <p className="font-body text-text-secondary leading-relaxed">
-              I believe technology is most powerful when it amplifies human potential.
-              That belief drives everything from the code I ship to the
-              conversations I have to the communities I build.
+              What keeps me going is simpler than all that: tech is only worth
+              building if it makes someone&apos;s day a little easier. That&apos;s
+              true whether I&apos;m shipping code, mentoring a junior, or just
+              having a long conversation about AI over chai.
             </p>
           </div>
 
@@ -148,8 +147,10 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className={`gradient-border glass-card rounded-2xl p-6 flex flex-col gap-3 shadow-lg ${pillar.glow} transition-all duration-300 cursor-default`}
+              whileHover={{ y: -5, scale: 1.02, rotate: 0 }}
+              className={`gradient-border glass-card rounded-2xl p-6 flex flex-col gap-3 shadow-lg ${pillar.glow} transition-all duration-300 cursor-default ${
+                i % 2 === 0 ? "scrap-tilt-l" : "scrap-tilt-r"
+              }`}
             >
               <div
                 className={`w-10 h-10 rounded-xl bg-gradient-to-br ${pillar.color} flex items-center justify-center shadow-lg`}
@@ -157,7 +158,7 @@ export default function AboutSection() {
                 <pillar.icon size={18} className="text-white" />
               </div>
 
-              <h3 className="font-display font-semibold text-text-primary text-lg">
+              <h3 className="font-display font-semibold text-text-primary text-2xl">
                 {pillar.title}
               </h3>
 

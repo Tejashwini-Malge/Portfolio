@@ -11,7 +11,7 @@ const skillCategories = [
     textColor: "text-accent-cyan",
     borderColor: "border-accent-cyan/30",
     bgColor: "bg-accent-cyan/5",
-    skills: ["Agentic AI", "RAG", "GenAI", "Prompt Engineering", "LLM Fine-tuning", "AI/ML"],
+    skills: ["Agentic AI", "RAG", "GenAI", "Prompt Engineering", "Deep Learning", "AI/ML"],
   },
   {
     label: "Development",
@@ -19,7 +19,7 @@ const skillCategories = [
     textColor: "text-accent-violet",
     borderColor: "border-accent-violet/30",
     bgColor: "bg-accent-violet/5",
-    skills: ["Python", "React", "Next.js", "Node.js", "TypeScript", "REST APIs"],
+    skills: ["Python", "Next.js", "REST APIs", "System Design"],
   },
   {
     label: "Infrastructure",
@@ -43,18 +43,18 @@ const featuredSkills = [
   { name: "Agentic AI", level: 85 },
   { name: "RAG Systems", level: 90 },
   { name: "Python", level: 88 },
-  { name: "Next.js", level: 82 },
+  { name: "Deep Learning", level: 70 },
   { name: "Prompt Engineering", level: 92 },
   { name: "Public Speaking", level: 88 },
 ];
 
 export default function SkillsSection() {
   return (
-    <SectionWrapper id="skills">
+    <SectionWrapper id="skills" tone="b">
       <SectionHeader
         tag="// tech stack"
-        title="Skills & Expertise"
-        subtitle="A blend of cutting-edge AI knowledge and full-stack development capability."
+        title="What's in My Toolbox"
+        subtitle="The languages, frameworks, and skills I actually reach for when building something."
       />
 
       {/* Category Cards */}
@@ -66,7 +66,10 @@ export default function SkillsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: ci * 0.12 }}
-            className="glass-card rounded-2xl p-6 relative overflow-hidden group hover:border-white/10 transition-all duration-300"
+            whileHover={{ rotate: 0 }}
+            className={`glass-card rounded-2xl p-6 relative overflow-hidden group hover:border-white/10 transition-all duration-300 ${
+              ci % 2 === 0 ? "scrap-tilt-l" : "scrap-tilt-r"
+            }`}
           >
             {/* Top gradient bar */}
             <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${cat.color}`} />
@@ -97,8 +100,8 @@ export default function SkillsSection() {
         viewport={{ once: true }}
         className="glass-card rounded-2xl p-8"
       >
-        <h3 className="font-display font-semibold text-text-primary text-xl mb-8">
-          Core Proficiencies
+        <h3 className="font-display font-semibold text-text-primary text-3xl mb-8">
+          Where I&apos;m Solid
         </h3>
         <div className="grid md:grid-cols-2 gap-6">
           {featuredSkills.map((skill, i) => (

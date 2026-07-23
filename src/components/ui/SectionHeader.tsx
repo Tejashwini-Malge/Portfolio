@@ -35,7 +35,7 @@ export default function SectionHeader({ tag, title, subtitle }: SectionHeaderPro
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="font-body text-text-secondary text-lg max-w-2xl mx-auto"
+          className="font-body text-text-primary/80 text-lg max-w-2xl mx-auto"
         >
           {subtitle}
         </motion.p>

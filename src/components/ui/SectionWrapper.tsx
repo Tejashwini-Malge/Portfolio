@@ -6,12 +6,14 @@ interface SectionWrapperProps {
   children: React.ReactNode;
   id?: string;
   className?: string;
+  tone?: "a" | "b";
 }
 
 export default function SectionWrapper({
   children,
   id,
   className = "",
+  tone = "a",
 }: SectionWrapperProps) {
   return (
     <motion.section
@@ -22,15 +24,18 @@ export default function SectionWrapper({
       transition={{ duration: 0.7 }}
       className={`
         relative
-        py-24
+        py-14
         px-6
         md:px-12
         lg:px-20
-        bg-transparent
-        text-[#2b2b2b]
+        ${tone === "b" ? "bg-bg-secondary" : "bg-bg-primary"}
+        text-text-primary
         ${className}
       `}
     >
+      {/* Ring binder spine */}
+      <div className="ring-spine hidden md:block" />
+
       <div className="max-w-7xl mx-auto relative z-10">
         {children}
       </div>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, PenLine } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -53,10 +53,10 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center">
-              <Zap size={16} className="text-white" />
+              <PenLine size={16} className="text-white" />
             </div>
-            <span className="font-display font-700 text-text-primary text-lg tracking-tight">
-              TM
+            <span className="font-display font-700 text-text-primary text-2xl tracking-tight">
+              Tejashwini
             </span>
           </a>
 

@@ -17,22 +17,22 @@ const config: Config = {
 
       colors: {
         bg: {
-          primary: "#140f0c",
-          secondary: "#1f1712",
-          card: "#2b1d15",
+          primary: "#d3b48a",
+          secondary: "#c6a276",
+          card: "#fdf8ee",
         },
 
         accent: {
-          cyan: "#ddb892",
-          violet: "#b08968",
-          pink: "#e6ccb2",
-          emerald: "#f8f1ea",
+          cyan: "#a8442a",
+          violet: "#4f6d8f",
+          pink: "#d9a441",
+          emerald: "#5f7a4f",
         },
 
         text: {
-          primary: "#f8f1ea",
-          secondary: "#d6c6b8",
-          muted: "#9f8d7f",
+          primary: "#2c1e12",
+          secondary: "#4a3826",
+          muted: "#6e5842",
         },
       },
 

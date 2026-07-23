@@ -2,14 +2,13 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Download, ArrowRight, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Download, ArrowRight, ChevronDown, Heart } from "lucide-react";
 
 const typingPhrases = [
-  "Building AI Systems",
-  "Exploring RAG & Agents",
-  "Empowering Students",
-  "Creating Impactful Tech",
-
+  "tinkering with RAG & agents",
+  "mentoring 750+ students",
+  "talking about AI on stage",
+  "writing stories that matter",
 ];
 
 function TypingAnimation() {
@@ -75,11 +74,19 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-6xl md:text-8xl font-800 tracking-tight text-text-primary mb-4 leading-none"
+          className="relative font-display text-6xl md:text-8xl font-800 tracking-tight text-text-primary mb-4 leading-none"
         >
           Tejashwini
           <br />
           <span className="gradient-text-cyan">Malge</span>
+          <motion.span
+            initial={{ opacity: 0, scale: 0.5, rotate: 20 }}
+            animate={{ opacity: 1, scale: 1, rotate: -8 }}
+            transition={{ duration: 0.5, delay: 0.8, type: "spring" }}
+            className="absolute -right-2 md:right-2 top-0 md:-top-2 w-11 h-11 rounded-md bg-bg-card border border-text-muted/15 shadow-lg flex items-center justify-center"
+          >
+            <Heart size={18} className="text-accent-pink fill-accent-pink" />
+          </motion.span>
         </motion.h1>
 
         {/* Role Tags */}
@@ -89,10 +96,12 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-wrap items-center justify-center gap-3 mb-6"
         >
-          {["AI Builder", "Speaker", "Engineering Student"].map((role) => (
+          {["Engineering Student", "Speaker", "Mentor"].map((role, i) => (
             <span
               key={role}
-              className="px-3 py-1 rounded-full text-sm font-mono text-text-secondary border border-text-muted/30 bg-bg-card"
+              className={`px-3 py-1 rounded-full text-sm font-mono text-text-secondary border border-text-muted/30 bg-bg-card shadow-sm ${
+                i % 2 === 0 ? "scrap-tilt-l" : "scrap-tilt-r"
+              }`}
             >
               {role}
             </span>
@@ -114,13 +123,13 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="font-body text-text-secondary text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="font-body text-text-primary/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          Final-year engineering student exploring the frontiers of{" "}
-          <span className="text-accent-cyan">RAG</span>,{" "}
-          <span className="text-accent-violet">Agentic AI</span>, and{" "}
-          <span className="text-accent-pink">GenAI</span>. Mentoring 750+ students,
-          speaking on AI, and writing stories that matter.
+          I&apos;m a final-year engineering student who got curious about{" "}
+          <span className="text-accent-cyan">RAG</span> and{" "}
+          <span className="text-accent-violet">agentic AI</span> and never really stopped.
+          Most days I&apos;m building something, mentoring someone, or up on stage
+          talking about both.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -182,7 +191,7 @@ export default function HeroSection() {
           <div className="w-px h-6 bg-text-muted/30" />
 
           <span className="font-mono text-xs text-text-muted">
-            AI • Communication • Confidence
+            code • chai • conversations
           </span>
         </motion.div>
       </div>

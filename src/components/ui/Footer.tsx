@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Heart, Zap } from "lucide-react";
+import { Github, Linkedin, Heart, PenLine } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -10,9 +10,9 @@ export default function Footer() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center">
-            <Zap size={14} className="text-white" />
+            <PenLine size={14} className="text-white" />
           </div>
-          <span className="font-display font-bold text-text-primary">TM</span>
+          <span className="font-display font-bold text-text-primary text-xl">Tejashwini</span>
         </div>
 
         {/* Copyright */}
@@ -21,9 +21,9 @@ export default function Footer() {
           animate={{ opacity: 1 }}
           className="font-mono text-xs text-text-muted flex items-center gap-1.5"
         >
-          © 2026 Tejashwini Malge · Built with{" "}
+          © 2026 Tejashwini Malge · made with{" "}
           <Heart size={11} className="text-accent-pink fill-accent-pink" />{" "}
-          & Next.js
+          and a little too much coffee
         </motion.p>
 
         {/* Social Links */}

@@ -1,24 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, Cpu, Mic2, Users, BookOpen, Globe, Rocket, Star } from "lucide-react";
+import { Trophy, Cpu, Users, Globe, Star } from "lucide-react";
 import SectionWrapper from "../ui/SectionWrapper";
 import SectionHeader from "../ui/SectionHeader";
 
 const achievements = [
   {
     icon: Cpu,
-    title: "AI Projects Shipped",
-    desc: "Built 4+ production-ready AI applications exploring RAG, Agentic AI, and full-stack ML systems.",
+    title: "Projects Shipped",
+    desc: "Built 4+ AI projects covering RAG, agents, and full-stack apps — each one taught me something the last one didn't.",
     stat: "4+",
-    statLabel: "AI Projects",
+    statLabel: "Projects",
     gradient: "from-accent-cyan to-blue-600",
     glow: "shadow-accent-cyan/10",
   },
   {
     icon: Users,
     title: "Student Mentor",
-    desc: "Mentored over 750 students, guiding them through AI, engineering, and career development.",
+    desc: "Talked through AI, engineering, and career decisions with 750+ students so far.",
     stat: "750+",
     statLabel: "Students Mentored",
     gradient: "from-accent-emerald to-teal-500",
@@ -26,10 +26,10 @@ const achievements = [
   },
   {
     icon: Globe,
-    title: "AI Community Builder",
-    desc: "Active LinkedIn creator building an engaged AI and tech community with educational content.",
-    stat: "↑",
-    statLabel: "Growing Network",
+    title: "LinkedIn Creator",
+    desc: "Write about AI, RAG, and student life on LinkedIn — 3,000+ people apparently find it worth reading.",
+    stat: "3,000+",
+    statLabel: "Followers",
     gradient: "from-blue-500 to-accent-cyan",
     glow: "shadow-blue-500/10",
   },
@@ -40,8 +40,8 @@ export default function AchievementsSection() {
     <SectionWrapper id="achievements">
       <SectionHeader
         tag="// achievements"
-        title="Milestones & Recognition"
-        subtitle="Building a track record of impact — one project, one talk, one student at a time."
+        title="A Running List"
+        subtitle="What I've built, said, and helped with so far."
       />
 
       {/* Trophy Banner */}
@@ -54,11 +54,11 @@ export default function AchievementsSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 to-transparent" />
         <Trophy className="text-yellow-400 shrink-0" size={32} />
         <div className="relative">
-          <p className="font-display font-semibold text-text-primary text-lg">
-            AI Builder × Speaker × Mentor
+          <p className="font-display font-semibold text-text-primary text-2xl">
+            Engineer, Speaker, Mentor — usually all at once
           </p>
           <p className="font-body text-text-secondary text-sm mt-1">
-            A multidisciplinary achiever combining technical depth with human-first leadership.
+            No single label ever quite fits, so here are three that mostly do.
           </p>
         </div>
       </motion.div>
@@ -72,8 +72,10 @@ export default function AchievementsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
-            whileHover={{ y: -6, scale: 1.02 }}
-            className={`gradient-border glass-card rounded-2xl p-6 relative overflow-hidden shadow-xl ${ach.glow} transition-all duration-300 cursor-default`}
+            whileHover={{ y: -6, scale: 1.02, rotate: 0 }}
+            className={`gradient-border glass-card rounded-2xl p-6 relative overflow-hidden shadow-xl ${ach.glow} transition-all duration-300 cursor-default ${
+              i % 2 === 0 ? "scrap-tilt-l" : "scrap-tilt-r"
+            }`}
           >
             {/* Background gradient */}
             <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${ach.gradient} opacity-5 rounded-full -translate-y-1/2 translate-x-1/2`} />
@@ -93,7 +95,7 @@ export default function AchievementsSection() {
               </div>
             </div>
 
-            <h3 className="font-display font-semibold text-text-primary text-lg mb-2">
+            <h3 className="font-display font-semibold text-text-primary text-2xl mb-2">
               {ach.title}
             </h3>
             <p className="font-body text-text-secondary text-sm leading-relaxed">

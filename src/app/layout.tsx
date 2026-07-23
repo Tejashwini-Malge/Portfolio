@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
-  title: "Tejashwini Malge AI Builder • Speaker • Mentor",
+  title: "Tejashwini Malge — notes on AI, teaching, and figuring things out",
 
   description:
-    "Final-year engineering student building AI systems, exploring RAG/Agentic AI, mentoring students, and creating impactful technology experiences.",
+    "Final-year engineering student working on RAG and agentic AI projects, mentoring students, and speaking about tech at college events.",
 
   keywords: [
     "Tejashwini Malge",
-    "AI Engineer",
     "RAG",
     "Agentic AI",
     "GenAI",
@@ -19,10 +20,10 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "Tejashwini Malge — AI Builder • Speaker • Mentor",
+    title: "Tejashwini Malge — notes on AI, teaching, and figuring things out",
 
     description:
-      "Building intelligent AI systems, mentoring students, and empowering the next generation of tech leaders.",
+      "Working on RAG and agentic AI projects, mentoring students, and speaking about tech at college events.",
 
     type: "website",
   },
@@ -36,7 +37,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased">
+        <div className="noise-overlay" />
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
