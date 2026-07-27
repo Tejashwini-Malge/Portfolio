@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center">
+          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-brick flex items-center justify-center">
             <PenLine size={14} className="text-white" />
           </div>
           <span className="font-display font-bold text-text-primary text-xl">Tejashwini</span>
@@ -29,7 +29,7 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/tejashwini-malge"
+            href="https://github.com/Tejashwini-Malge"
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-muted hover:text-accent-cyan transition-colors"
@@ -37,7 +37,7 @@ export default function Footer() {
             <Github size={18} />
           </a>
           <a
-            href="https://linkedin.com/in/tejashwini-malge"
+            href="https://linkedin.com/in/tejashwinimalge"
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-muted hover:text-accent-cyan transition-colors"

@@ -11,41 +11,77 @@ const skillCategories = [
     textColor: "text-accent-cyan",
     borderColor: "border-accent-cyan/30",
     bgColor: "bg-accent-cyan/5",
-    skills: ["Agentic AI", "RAG", "GenAI", "Prompt Engineering", "Deep Learning", "AI/ML"],
+    skills: [
+      "LLMs",
+      "Agentic AI",
+      "RAG",
+      "PyTorch",
+      "TensorFlow",
+      "Deep Learning",
+      "Prompt Engineering",
+      "Computer Vision",
+      "VLM",
+      "Transformers",
+    ],
   },
   {
-    label: "Development",
+    label: "Languages & Frameworks",
     color: "from-accent-violet to-accent-pink",
     textColor: "text-accent-violet",
     borderColor: "border-accent-violet/30",
     bgColor: "bg-accent-violet/5",
-    skills: ["Python", "Next.js", "REST APIs", "System Design"],
+    skills: ["Python", "SQL", "FastAPI", "Next.js", "React", "Tailwind CSS", "Prisma ORM"],
   },
   {
-    label: "Infrastructure",
+    label: "Databases & Tools",
     color: "from-accent-emerald to-teal-500",
     textColor: "text-accent-emerald",
     borderColor: "border-accent-emerald/30",
     bgColor: "bg-accent-emerald/5",
-    skills: ["MongoDB", "Docker", "Git/GitHub", "Vercel", "CI/CD"],
+    skills: [
+      "PostgreSQL",
+      "Neon PostgreSQL",
+      "Git",
+      "GitHub",
+      "Docker",
+      "Railway",
+      "Render",
+      "Vercel",
+    ],
   },
   {
-    label: "Soft Skills",
+    label: "Concepts",
     color: "from-accent-pink to-orange-400",
     textColor: "text-accent-pink",
     borderColor: "border-accent-pink/30",
     bgColor: "bg-accent-pink/5",
-    skills: ["Public Speaking", "Leadership", "Mentorship", "Technical Writing", "Community Building"],
+    skills: [
+      "System Design",
+      "Agentic System Design",
+      "Multi-Agent Orchestration",
+      "Public Speaking",
+      "Mentorship",
+    ],
   },
 ];
 
-const featuredSkills = [
-  { name: "Agentic AI", level: 85 },
-  { name: "RAG Systems", level: 90 },
-  { name: "Python", level: 88 },
-  { name: "Deep Learning", level: 70 },
-  { name: "Prompt Engineering", level: 92 },
-  { name: "Public Speaking", level: 88 },
+const researchAreas = [
+  {
+    name: "Agentic RAG",
+    desc: "Retrieval that reasons about what it needs before it goes looking.",
+  },
+  {
+    name: "Vision-Language Models",
+    desc: "Getting models to read an image and write something clinically useful about it.",
+  },
+  {
+    name: "Multimodal Learning",
+    desc: "Text, images, and structure learned together rather than bolted on.",
+  },
+  {
+    name: "Transformer Architectures",
+    desc: "The layer underneath all of the above — worth understanding properly.",
+  },
 ];
 
 export default function SkillsSection() {
@@ -93,33 +129,40 @@ export default function SkillsSection() {
         ))}
       </div>
 
-      {/* Proficiency Bars */}
+      {/* Research Areas */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="glass-card rounded-2xl p-8"
       >
-        <h3 className="font-display font-semibold text-text-primary text-3xl mb-8">
-          Where I&apos;m Solid
+        <h3 className="font-display font-semibold text-text-primary text-3xl mb-2">
+          What I&apos;m Reading Into
         </h3>
+        <p className="font-body text-text-secondary text-sm mb-8">
+          The research areas I keep coming back to.
+        </p>
+
         <div className="grid md:grid-cols-2 gap-6">
-          {featuredSkills.map((skill, i) => (
-            <div key={skill.name} className="space-y-2">
-              <div className="flex justify-between items-center">
-                <span className="font-mono text-sm text-text-secondary">{skill.name}</span>
-                <span className="font-mono text-xs text-accent-cyan">{skill.level}%</span>
+          {researchAreas.map((area, i) => (
+            <motion.div
+              key={area.name}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex gap-3"
+            >
+              <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-brick shrink-0" />
+              <div>
+                <p className="font-display font-semibold text-text-primary text-xl leading-tight">
+                  {area.name}
+                </p>
+                <p className="font-body text-sm text-text-secondary leading-relaxed mt-1">
+                  {area.desc}
+                </p>
               </div>
-              <div className="h-1.5 bg-bg-secondary rounded-full overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.2, delay: i * 0.1, ease: "easeOut" }}
-                  className="h-full rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet"
-                />
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>

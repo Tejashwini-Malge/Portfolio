@@ -27,6 +27,10 @@ const config: Config = {
           violet: "#4f6d8f",
           pink: "#d9a441",
           emerald: "#5f7a4f",
+          // Warm terracotta range, shared with .wax-seal / .pin-dot in globals.css.
+          // Used for CTA gradients — both dark enough for white text (5.9:1 / 9.7:1).
+          ember: "#bc5b39",
+          brick: "#7a2a1c",
         },
 
         text: {

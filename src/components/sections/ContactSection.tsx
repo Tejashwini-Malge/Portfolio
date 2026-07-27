@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, Send, ArrowRight, Zap } from "lucide-react";
+import { Mail, Github, Linkedin, Send, ArrowRight, Zap, MapPin } from "lucide-react";
 import SectionWrapper from "../ui/SectionWrapper";
 
 export default function ContactSection() {
@@ -39,8 +39,19 @@ export default function ContactSection() {
           transition={{ delay: 0.2 }}
           className="font-body text-text-primary/80 text-lg max-w-xl mx-auto"
         >
-          Whether you&apos;re looking for an intern, a speaker, a project partner,
-          or just want to talk about AI over chai — I&apos;d love to hear from you.
+          Whether you&apos;re looking for an AI engineer, a research collaborator,
+          a speaker, or just want to talk about agents over chai — I&apos;d love to
+          hear from you.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="font-mono text-xs text-text-muted mt-4 flex items-center justify-center gap-2"
+        >
+          <MapPin size={12} />
+          Bidar, Karnataka · open to remote
         </motion.p>
       </div>
 
@@ -58,16 +69,16 @@ export default function ContactSection() {
           {
             icon: Linkedin,
             label: "LinkedIn",
-            value: "linkedin.com/in/tejashwini-malge",
-            href: "https://linkedin.com/in/tejashwini-malge",
+            value: "linkedin.com/in/tejashwinimalge",
+            href: "https://linkedin.com/in/tejashwinimalge",
             gradient: "from-accent-violet to-accent-pink",
             desc: "Let's connect professionally",
           },
           {
             icon: Github,
             label: "GitHub",
-            value: "github.com/tejashwini-malge",
-            href: "https://github.com/tejashwini-malge",
+            value: "github.com/Tejashwini-Malge",
+            href: "https://github.com/Tejashwini-Malge",
             gradient: "from-accent-emerald to-teal-500",
             desc: "Explore my code & projects",
           },
@@ -114,7 +125,7 @@ export default function ContactSection() {
         className="glass-card rounded-2xl p-8 md:p-12 text-center relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-accent-cyan/10 via-accent-violet/10 to-accent-pink/10" />
-        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent-cyan via-accent-violet to-accent-pink" />
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent-cyan via-accent-ember to-accent-pink" />
 
         <div className="relative">
           <Zap className="text-accent-cyan mx-auto mb-4" size={36} />
@@ -122,18 +133,18 @@ export default function ContactSection() {
             Got something in mind? Let&apos;s talk.
           </h3>
           <p className="font-body text-text-secondary mb-8 max-w-md mx-auto">
-            Open to internships, speaking invites, and interesting collaborations.
+            Open to AI engineering roles, research collaborations, and speaking invites.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="mailto:trmalge@gmail.com"
-              className="shimmer-btn flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet text-white font-medium font-body hover:shadow-2xl hover:shadow-accent-cyan/30 transition-all duration-300 hover:scale-105"
+              className="shimmer-btn flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-brick text-white font-medium font-body hover:shadow-2xl hover:shadow-accent-cyan/30 transition-all duration-300 hover:scale-105"
             >
               <Send size={16} />
               Send a Message
             </a>
             <a
-              href="/TEJASHWINI.pdf"
+              href="/Tejashwini-Malge.pdf"
               download
               className="flex items-center gap-2 px-8 py-3.5 rounded-full border border-text-muted/30 text-text-secondary hover:text-accent-cyan hover:border-accent-cyan/40 transition-all duration-300 font-body"
             >

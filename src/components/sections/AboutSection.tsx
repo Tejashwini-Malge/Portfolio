@@ -1,25 +1,31 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { BookOpen, Brain, Mic, Users } from "lucide-react";
+import { Brain, Mic, Microscope, Users } from "lucide-react";
 import SectionWrapper from "../ui/SectionWrapper";
 import SectionHeader from "../ui/SectionHeader";
 
 const pillars = [
   {
     icon: Brain,
-    title: "Tinkerer",
-    desc: "Poking at RAG, GenAI, and agent systems until they actually work.",
+    title: "Builder",
+    desc: "Agentic workflows, RAG pipelines, and multi-agent systems — built until they actually hold up.",
     color: "from-accent-cyan to-blue-500",
     glow: "shadow-accent-cyan/20",
+  },
+  {
+    icon: Microscope,
+    title: "Researcher",
+    desc: "Vision-language models and multimodal learning for medical AI at NITK Surathkal.",
+    color: "from-accent-violet to-accent-pink",
+    glow: "shadow-accent-violet/20",
   },
   {
     icon: Mic,
     title: "Speaker",
     desc: "Explaining AI to a room without making it sound scarier than it is.",
-    color: "from-accent-violet to-accent-pink",
-    glow: "shadow-accent-violet/20",
+    color: "from-accent-pink to-orange-400",
+    glow: "shadow-accent-pink/20",
   },
   {
     icon: Users,
@@ -31,9 +37,10 @@ const pillars = [
 ];
 
 const stats = [
+  { value: "9.50", label: "CGPA / 10" },
   { value: "750+", label: "Students Mentored" },
-  { value: "4+", label: "AI Projects Built" },
-  { value: "∞", label: "Ideas Yet to be discovered" },
+  { value: "3,000+", label: "Community" },
+  { value: "4", label: "AI Projects Built" },
 ];
 
 export default function AboutSection() {
@@ -45,100 +52,83 @@ export default function AboutSection() {
         subtitle="I like building things that matter, and talking about why they matter."
       />
 
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        
-        {/* Profile Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex justify-center"
-        >
-          <div className="relative scrap-tilt-l">
-            {/* Polaroid frame */}
-            <div className="relative glass-card torn-edge-bottom rounded-sm p-3 pb-14">
-              <div className="washi-tape" />
-              <Image
-                src="/profile.jpeg"
-                alt="Tejashwini Malge"
-                width={420}
-                height={520}
-                className="rounded-sm object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </motion.div>
+      <div className="grid md:grid-cols-5 gap-8 items-start">
 
         {/* Story */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="space-y-6"
+          className="md:col-span-3 space-y-6"
         >
           <div className="glass-card rounded-2xl p-8 relative overflow-hidden scrap-tilt-r">
 
             {/* Decorative gradient */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-cyan via-accent-violet to-accent-pink" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-cyan via-accent-ember to-accent-pink" />
 
             <p className="font-body text-text-secondary leading-relaxed text-lg mb-4">
               I&apos;m a{" "}
               <span className="text-text-primary font-medium">
-                final-year engineering student
+                final-year Computer Science student at Srinivas University
               </span>{" "}
-              who got hooked on building things that think —{" "}
-              <span className="text-accent-cyan">
-                RAG pipelines
-              </span>{" "}
-              ,{" "}
-              <span className="text-accent-violet">
-                agentic workflows
-              </span>
-              , the whole rabbit hole. I care less about AI being impressive
-              and more about it being useful to someone.
+              (CGPA 9.50/10), based in Bidar, Karnataka. I got hooked on building
+              things that think —{" "}
+              <span className="text-accent-cyan">agentic systems</span>,{" "}
+              <span className="text-accent-violet">RAG pipelines</span>,{" "}
+              <span className="text-accent-emerald">vision-language models</span>
+              , the whole rabbit hole. I care less about AI being impressive and
+              more about it being useful to someone.
             </p>
 
             <p className="font-body text-text-secondary leading-relaxed">
-              What keeps me going is simpler than all that: tech is only worth
-              building if it makes someone&apos;s day a little easier. That&apos;s
-              true whether I&apos;m shipping code, mentoring a junior, or just
-              having a long conversation about AI over chai.
+              These days that splits between applied research — generating
+              structured radiology reports from medical images at NITK Surathkal —
+              and shipping products, like the agentic NGO transparency platform I
+              work on as an AI Social Impact Fellow. What keeps me going is
+              simpler than all that: tech is only worth building if it makes
+              someone&apos;s day a little easier.
             </p>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-4 gap-4">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-card rounded-xl p-4 text-center"
-              >
-                <p className="font-display text-2xl font-bold gradient-text-cyan">
-                  {stat.value}
-                </p>
-
-                <p className="font-mono text-xs text-text-muted mt-1">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
           </div>
         </motion.div>
 
-        {/* Pillar Cards */}
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="grid grid-cols-2 gap-4 md:col-span-2"
+          className="md:col-span-2 grid grid-cols-2 gap-4"
+        >
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className={`glass-card rounded-xl p-5 text-center ${
+                i % 2 === 0 ? "scrap-tilt-l" : "scrap-tilt-r"
+              }`}
+            >
+              <p className="font-display text-3xl font-bold gradient-text-cyan">
+                {stat.value}
+              </p>
+
+              <p className="font-mono text-xs text-text-muted mt-1">
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Pillar Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:col-span-5 mt-4"
         >
           {pillars.map((pillar, i) => (
             <motion.div

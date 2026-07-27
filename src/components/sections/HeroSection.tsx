@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Download, ArrowRight, ChevronDown, Heart } from "lucide-react";
 
 const typingPhrases = [
-  "tinkering with RAG & agents",
+  "building agentic AI systems",
+  "researching vision-language models",
   "mentoring 750+ students",
   "talking about AI on stage",
-  "writing stories that matter",
 ];
 
 function TypingAnimation() {
@@ -49,23 +50,25 @@ function TypingAnimation() {
 
 export default function HeroSection() {
   return (
-    <section className="relative z-10 min-h-screen flex items-center justify-center px-6 pt-20">
-      {/* Background glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-cyan/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-violet/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-pink/3 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative z-10 min-h-screen overflow-hidden flex items-center justify-center px-6 pt-24 pb-16">
+      {/* Warm paper wash — tuned for the tan background */}
+      <div className="absolute top-10 -left-20 w-[30rem] h-[30rem] bg-accent-pink/25 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 -right-10 w-[28rem] h-[28rem] bg-accent-cyan/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto text-center">
+      <div className="max-w-6xl w-full mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+
+        {/* Left column — the words */}
+        <div className="text-center lg:text-left">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent-cyan/20 bg-accent-cyan/5 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent-cyan/25 bg-bg-card/70 mb-6"
         >
           <span className="w-2 h-2 rounded-full bg-accent-emerald animate-pulse" />
           <span className="font-mono text-xs text-accent-cyan tracking-widest uppercase">
-            Open to Internships & Collaborations
+            Open to AI Roles & Research Collaborations
           </span>
         </motion.div>
 
@@ -74,19 +77,11 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative font-display text-6xl md:text-8xl font-800 tracking-tight text-text-primary mb-4 leading-none"
+          className="relative font-display text-6xl md:text-7xl xl:text-8xl font-800 tracking-tight text-text-primary mb-4 leading-none"
         >
           Tejashwini
           <br />
           <span className="gradient-text-cyan">Malge</span>
-          <motion.span
-            initial={{ opacity: 0, scale: 0.5, rotate: 20 }}
-            animate={{ opacity: 1, scale: 1, rotate: -8 }}
-            transition={{ duration: 0.5, delay: 0.8, type: "spring" }}
-            className="absolute -right-2 md:right-2 top-0 md:-top-2 w-11 h-11 rounded-md bg-bg-card border border-text-muted/15 shadow-lg flex items-center justify-center"
-          >
-            <Heart size={18} className="text-accent-pink fill-accent-pink" />
-          </motion.span>
         </motion.h1>
 
         {/* Role Tags */}
@@ -94,9 +89,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap items-center justify-center gap-3 mb-6"
+          className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6"
         >
-          {["Engineering Student", "Speaker", "Mentor"].map((role, i) => (
+          {["AI Engineer", "Agentic AI", "Research Intern", "Speaker"].map((role, i) => (
             <span
               key={role}
               className={`px-3 py-1 rounded-full text-sm font-mono text-text-secondary border border-text-muted/30 bg-bg-card shadow-sm ${
@@ -113,7 +108,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="text-2xl md:text-3xl mb-8 h-12 flex items-center justify-center"
+          className="text-2xl md:text-3xl mb-6 h-12 flex items-center justify-center lg:justify-start"
         >
           <TypingAnimation />
         </motion.div>
@@ -123,13 +118,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="font-body text-text-primary/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="font-body text-text-primary/80 text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
         >
-          I&apos;m a final-year engineering student who got curious about{" "}
-          <span className="text-accent-cyan">RAG</span> and{" "}
-          <span className="text-accent-violet">agentic AI</span> and never really stopped.
-          Most days I&apos;m building something, mentoring someone, or up on stage
-          talking about both.
+          Final-year CS student building with{" "}
+          <span className="text-accent-cyan">agentic AI</span>,{" "}
+          <span className="text-accent-violet">LLMs</span>, and{" "}
+          <span className="text-accent-emerald">multimodal models</span>. Currently
+          researching vision-language systems at NITK Surathkal and shipping AI
+          products that people actually use.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -137,11 +133,11 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-12"
+          className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8"
         >
           <a
             href="#projects"
-            className="shimmer-btn group flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet text-white font-medium font-body transition-all duration-300 hover:shadow-2xl hover:shadow-accent-cyan/30 hover:scale-105"
+            className="shimmer-btn group flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-brick text-white font-medium font-body transition-all duration-300 hover:shadow-2xl hover:shadow-accent-cyan/30 hover:scale-105"
           >
             View Projects
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -155,9 +151,9 @@ export default function HeroSection() {
           </a>
 
           <a
-            href="/TEJASHWINI.pdf"
+            href="/Tejashwini-Malge.pdf"
             download
-            className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-accent-violet/30 text-accent-violet font-medium font-body hover:bg-accent-violet/10 transition-all duration-300"
+            className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-accent-cyan/40 text-accent-cyan font-medium font-body hover:bg-accent-cyan/10 transition-all duration-300"
           >
             <Download size={16} />
             Resume
@@ -169,10 +165,10 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.65 }}
-          className="flex items-center justify-center gap-4"
+          className="flex items-center justify-center lg:justify-start gap-4"
         >
           <a
-            href="https://github.com/tejashwini-malge"
+            href="https://github.com/Tejashwini-Malge"
             target="_blank"
             rel="noopener noreferrer"
             className="w-11 h-11 rounded-full border border-text-muted/30 flex items-center justify-center text-text-secondary hover:text-accent-cyan hover:border-accent-cyan/50 hover:bg-accent-cyan/5 transition-all duration-300 hover:scale-110"
@@ -180,7 +176,7 @@ export default function HeroSection() {
             <Github size={18} />
           </a>
           <a
-            href="https://linkedin.com/in/tejashwini-malge"
+            href="https://linkedin.com/in/tejashwinimalge"
             target="_blank"
             rel="noopener noreferrer"
             className="w-11 h-11 rounded-full border border-text-muted/30 flex items-center justify-center text-text-secondary hover:text-accent-cyan hover:border-accent-cyan/50 hover:bg-accent-cyan/5 transition-all duration-300 hover:scale-110"
@@ -193,6 +189,45 @@ export default function HeroSection() {
           <span className="font-mono text-xs text-text-muted">
             code • chai • conversations
           </span>
+        </motion.div>
+        </div>
+
+        {/* Right column — the polaroid */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92, rotate: 6 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 0.7, delay: 0.3, type: "spring", bounce: 0.25 }}
+          className="flex justify-center"
+        >
+          <div className="relative scrap-tilt-r w-[260px] sm:w-[320px] lg:w-full lg:max-w-[400px]">
+            <div className="relative glass-card torn-edge-bottom rounded-sm p-3 pb-16">
+              <div className="washi-tape" />
+
+              <Image
+                src="/profile.webp"
+                alt="Tejashwini Malge"
+                width={400}
+                height={500}
+                className="rounded-sm object-cover object-center w-full aspect-[4/5]"
+                priority
+              />
+
+              {/* Handwritten polaroid caption */}
+              <p className="absolute bottom-4 left-0 right-0 text-center font-display text-2xl text-text-secondary">
+                building things that think
+              </p>
+            </div>
+
+            {/* Heart sticker, stuck on the corner */}
+            <motion.span
+              initial={{ opacity: 0, scale: 0.5, rotate: 20 }}
+              animate={{ opacity: 1, scale: 1, rotate: -10 }}
+              transition={{ duration: 0.5, delay: 1, type: "spring" }}
+              className="absolute -top-4 -right-4 w-12 h-12 rounded-md bg-bg-card border border-text-muted/15 shadow-lg flex items-center justify-center"
+            >
+              <Heart size={20} className="text-accent-pink fill-accent-pink" />
+            </motion.span>
+          </div>
         </motion.div>
       </div>
 

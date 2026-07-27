@@ -4,26 +4,28 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
-  title: "Tejashwini Malge — notes on AI, teaching, and figuring things out",
+  title: "Tejashwini Malge — AI Engineer | Agentic AI",
 
   description:
-    "Final-year engineering student working on RAG and agentic AI projects, mentoring students, and speaking about tech at college events.",
+    "Final-year Computer Science student specializing in Agentic AI, LLMs, and multimodal AI. Building AI products, conducting applied research, and developing scalable AI applications with Python, PyTorch, FastAPI, and PostgreSQL.",
 
   keywords: [
     "Tejashwini Malge",
-    "RAG",
+    "AI Engineer",
     "Agentic AI",
-    "GenAI",
+    "LLMs",
+    "RAG",
+    "Vision-Language Models",
+    "Multimodal AI",
     "Speaker",
-    "Mentor",
     "Portfolio",
   ],
 
   openGraph: {
-    title: "Tejashwini Malge — notes on AI, teaching, and figuring things out",
+    title: "Tejashwini Malge — AI Engineer | Agentic AI",
 
     description:
-      "Working on RAG and agentic AI projects, mentoring students, and speaking about tech at college events.",
+      "Final-year Computer Science student specializing in Agentic AI, LLMs, and multimodal AI — building AI products and conducting applied research.",
 
     type: "website",
   },

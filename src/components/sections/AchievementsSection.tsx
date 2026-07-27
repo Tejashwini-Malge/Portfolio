@@ -1,37 +1,64 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, Cpu, Users, Globe, Star } from "lucide-react";
+import { Trophy, Cpu, Users, Globe, Star, GraduationCap, Timer, Award } from "lucide-react";
 import SectionWrapper from "../ui/SectionWrapper";
 import SectionHeader from "../ui/SectionHeader";
 
 const achievements = [
   {
-    icon: Cpu,
-    title: "Projects Shipped",
-    desc: "Built 4+ AI projects covering RAG, agents, and full-stack apps — each one taught me something the last one didn't.",
-    stat: "4+",
-    statLabel: "Projects",
+    icon: GraduationCap,
+    title: "Academics",
+    desc: "Computer Science and Engineering at Srinivas University Institute of Engineering and Technology, Mangalore.",
+    stat: "9.50",
+    statLabel: "CGPA / 10",
     gradient: "from-accent-cyan to-blue-600",
     glow: "shadow-accent-cyan/10",
   },
   {
     icon: Users,
-    title: "Student Mentor",
-    desc: "Talked through AI, engineering, and career decisions with 750+ students so far.",
+    title: "Guest Trainer",
+    desc: "Delivered AI and communication workshops across colleges and institutions, reaching 750+ students.",
     stat: "750+",
-    statLabel: "Students Mentored",
+    statLabel: "Students Reached",
     gradient: "from-accent-emerald to-teal-500",
     glow: "shadow-accent-emerald/10",
   },
   {
     icon: Globe,
-    title: "LinkedIn Creator",
-    desc: "Write about AI, RAG, and student life on LinkedIn — 3,000+ people apparently find it worth reading.",
+    title: "LinkedIn Community",
+    desc: "Educational content on AI, networking, and career development — 3,000+ professionals apparently find it worth reading.",
     stat: "3,000+",
-    statLabel: "Followers",
+    statLabel: "Professionals",
     gradient: "from-blue-500 to-accent-cyan",
     glow: "shadow-blue-500/10",
+  },
+  {
+    icon: Cpu,
+    title: "Products Validated",
+    desc: "AIRA and BlogAgent were both put in front of real users — students, educators, engineers, founders, editors — and reshaped by what came back.",
+    stat: "70+",
+    statLabel: "Users Interviewed",
+    gradient: "from-accent-violet to-accent-pink",
+    glow: "shadow-accent-violet/10",
+  },
+  {
+    icon: Timer,
+    title: "24-Hour AI Hackathon",
+    desc: "Designed and shipped an end-to-end AI solution under strict time constraints, start to finish, in a single day.",
+    stat: "24h",
+    statLabel: "Start to Ship",
+    gradient: "from-accent-pink to-orange-400",
+    glow: "shadow-accent-pink/10",
+  },
+  {
+    icon: Award,
+    title: "State-Level SAP HackFest",
+    desc: "Competed on enterprise technology and problem-solving challenges, collaborating under competition conditions.",
+    stat: "SAP",
+    statLabel: "State Level",
+    gradient: "from-accent-violet to-blue-500",
+    glow: "shadow-accent-violet/10",
   },
 ];
 
@@ -55,7 +82,7 @@ export default function AchievementsSection() {
         <Trophy className="text-yellow-400 shrink-0" size={32} />
         <div className="relative">
           <p className="font-display font-semibold text-text-primary text-2xl">
-            Engineer, Speaker, Mentor — usually all at once
+            Researcher, Engineer, Speaker — usually all at once
           </p>
           <p className="font-body text-text-secondary text-sm mt-1">
             No single label ever quite fits, so here are three that mostly do.

@@ -1,48 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, TrendingUp, Mic, Code2, Star } from "lucide-react";
+import { Users, TrendingUp, Microscope, ShieldCheck, Star } from "lucide-react";
 import SectionWrapper from "../ui/SectionWrapper";
 import SectionHeader from "../ui/SectionHeader";
 
 const experiences = [
   {
-    icon: Users,
-    title: "Student Mentor & Community Lead",
-    org: "AI & Tech Community",
-    period: "2023 — Present",
-    desc: "Mentored 750+ students on AI, career decisions, and general figuring-things-out. Built small communities where people actually ask questions instead of just lurking.",
-    highlights: ["750+ students", "Multiple colleges", "AI workshops"],
+    icon: Microscope,
+    title: "Research Intern",
+    org: "NITK Surathkal · Mangalore, Karnataka",
+    period: "May 2026 — Present",
+    desc: "Building an AI-powered radiology report generation system that turns medical images into structured clinical reports, using vision-language models and transformer architectures. Day to day that means data preprocessing, feature extraction, model experimentation, and evaluation across multimodal medical AI workflows.",
+    highlights: ["Vision-Language Models", "Transformers", "Multimodal Medical AI"],
     color: "from-accent-cyan to-blue-600",
     glow: "border-accent-cyan/20",
+  },
+  {
+    icon: ShieldCheck,
+    title: "AI Social Impact Fellow",
+    org: "Vitainspire · T-Hub, Hyderabad (Remote, Part-time)",
+    period: "June 2026 — Present",
+    desc: "Building the admin dashboard for an agentic AI NGO transparency platform with Next.js, TypeScript, Prisma ORM, and Neon PostgreSQL. Integrated specialised agents for compliance validation, fraud detection, document verification, and campaign review into the NGO administration workflow.",
+    highlights: ["Next.js + TypeScript", "Prisma + Neon PostgreSQL", "Agentic workflows"],
+    color: "from-accent-violet to-accent-pink",
+    glow: "border-accent-violet/20",
+  },
+  {
+    icon: Users,
+    title: "Guest Trainer — AI & Communication",
+    org: "Colleges & Institutions",
+    period: "2023 — Present",
+    desc: "Deliver AI and communication workshops across colleges and institutions, reaching 750+ students. Also served as Speaker's Club Coordinator, running public speaking sessions and mentoring students on communication and presentation.",
+    highlights: ["750+ students reached", "Multiple institutions", "Speaker's Club Coordinator"],
+    color: "from-accent-emerald to-teal-500",
+    glow: "border-accent-emerald/20",
   },
   {
     icon: TrendingUp,
     title: "LinkedIn Creator",
     org: "Personal",
     period: "2023 — Present",
-    desc: "Write about AI, RAG, and student life on LinkedIn. Somehow grew an audience of 3,000+ people who enjoy reading about my late-night debugging sessions.",
-    highlights: ["3,000+ followers", "Weekly posts", "Real conversations in the comments"],
-    color: "from-accent-violet to-accent-pink",
-    glow: "border-accent-violet/20",
-  },
-  {
-    icon: Mic,
-    title: "Speaker",
-    org: "College Tech Events",
-    period: "2023 — Present",
-    desc: "Talk about AI at college events and student programs — trying to make it feel less intimidating and a bit more fun.",
-    highlights: ["Talks at multiple colleges", "Youth-focused sessions", "Q&A that actually gets messy"],
-    color: "from-accent-emerald to-teal-500",
-    glow: "border-accent-emerald/20",
-  },
-  {
-    icon: Code2,
-    title: "Independent Projects",
-    org: "Personal / Open Source",
-    period: "2023 — Present",
-    desc: "Build RAG systems, agent workflows, and full-stack apps on my own time — mostly to solve problems I've actually run into.",
-    highlights: ["4+ projects shipped", "Open-source contributions", "Full-stack + AI"],
+    desc: "Write about AI, networking, and career development on LinkedIn — a community of 3,000+ professionals has grown around it, mostly people who enjoy reading about my late-night debugging sessions.",
+    highlights: ["3,000+ community", "Educational content", "Real conversations in the comments"],
     color: "from-accent-pink to-orange-400",
     glow: "border-accent-pink/20",
   },
@@ -54,7 +54,7 @@ export default function ExperienceSection() {
       <SectionHeader
         tag="// experience"
         title="What I've Been Up To"
-        subtitle="Mentoring, speaking, writing, building — usually all in the same week."
+        subtitle="Applied research, product work, and teaching — usually all in the same week."
       />
 
       {/* Timeline */}

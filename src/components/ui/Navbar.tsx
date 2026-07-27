@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-violet flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-brick flex items-center justify-center">
               <PenLine size={16} className="text-white" />
             </div>
             <span className="font-display font-700 text-text-primary text-2xl tracking-tight">
@@ -74,7 +74,7 @@ export default function Navbar() {
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-px bg-gradient-to-r from-accent-cyan to-accent-violet transition-all duration-300 ${
+                  className={`absolute -bottom-1 left-0 h-px bg-gradient-to-r from-accent-cyan to-accent-brick transition-all duration-300 ${
                     activeSection === link.href.replace("#", "")
                       ? "w-full"
                       : "w-0 group-hover:w-full"
@@ -88,7 +88,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="#contact"
-              className="shimmer-btn px-5 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-accent-cyan to-accent-violet text-white font-body transition-all duration-300 hover:shadow-lg hover:shadow-accent-cyan/30 hover:scale-105"
+              className="shimmer-btn px-5 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-accent-cyan to-accent-brick text-white font-body transition-all duration-300 hover:shadow-lg hover:shadow-accent-cyan/30 hover:scale-105"
             >
               Let&apos;s Connect
             </a>
@@ -133,7 +133,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               onClick={() => setMobileOpen(false)}
-              className="mt-4 px-8 py-3 rounded-full bg-gradient-to-r from-accent-cyan to-accent-violet text-white font-medium"
+              className="mt-4 px-8 py-3 rounded-full bg-gradient-to-r from-accent-cyan to-accent-brick text-white font-medium"
             >
               Let&apos;s Connect
             </motion.a>
