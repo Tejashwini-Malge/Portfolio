@@ -9,7 +9,7 @@ const pillars = [
   {
     icon: Brain,
     title: "Builder",
-    desc: "Agentic workflows, RAG pipelines, and multi-agent systems — built until they actually hold up.",
+    desc: "Agentic workflows, RAG pipelines, and multi-agent systems built until they actually hold up.",
     color: "from-accent-cyan to-blue-500",
     glow: "shadow-accent-cyan/20",
   },
@@ -30,14 +30,14 @@ const pillars = [
   {
     icon: Users,
     title: "Mentor",
-    desc: "Talking 750+ students through their next step — one conversation at a time.",
+    desc: "Talking to 750+ students about LinkedIn, networking, career, and AI.",
     color: "from-accent-emerald to-teal-400",
     glow: "shadow-accent-emerald/20",
   },
 ];
 
 const stats = [
-  { value: "9.50", label: "CGPA / 10" },
+  { value: "9.5", label: "CGPA / 10" },
   { value: "750+", label: "Students Mentored" },
   { value: "3,000+", label: "Community" },
   { value: "4", label: "AI Projects Built" },
@@ -72,22 +72,19 @@ export default function AboutSection() {
               <span className="text-text-primary font-medium">
                 final-year Computer Science student at Srinivas University
               </span>{" "}
-              (CGPA 9.50/10), based in Bidar, Karnataka. I got hooked on building
-              things that think —{" "}
+              (CGPA 9.5/10), based in Bidar, Karnataka. I love building
+              things that think, such as{" "}
               <span className="text-accent-cyan">agentic systems</span>,{" "}
               <span className="text-accent-violet">RAG pipelines</span>,{" "}
               <span className="text-accent-emerald">vision-language models</span>
-              , the whole rabbit hole. I care less about AI being impressive and
-              more about it being useful to someone.
+              , the whole rabbit hole.
             </p>
 
             <p className="font-body text-text-secondary leading-relaxed">
-              These days that splits between applied research — generating
-              structured radiology reports from medical images at NITK Surathkal —
+              These days that splits between applied research generating
+              structured radiology reports from medical images at NITK Surathkal
               and shipping products, like the agentic NGO transparency platform I
-              work on as an AI Social Impact Fellow. What keeps me going is
-              simpler than all that: tech is only worth building if it makes
-              someone&apos;s day a little easier.
+              work on as an AI Social Impact Fellow.
             </p>
           </div>
         </motion.div>

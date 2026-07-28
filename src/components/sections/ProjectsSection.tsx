@@ -63,6 +63,8 @@ const projects: Project[] = [
     longDesc:
       "Compliance verification, impact tracking, and proof-based reporting, with AI-assisted fraud detection and document verification behind human approval gates. Automates checks across 6 compliance categories — PAN, Registration, 12A, 80G, FCRA, and Impact Proofs.",
     tech: ["Next.js", "TypeScript", "Prisma ORM", "Neon PostgreSQL"],
+    github: "https://github.com/kruhi7533/Imparency",
+    demo: "https://impactbridge-omega.vercel.app/",
     icon: Eye,
     gradient: "from-accent-emerald to-teal-500",
     glow: "hover:shadow-accent-emerald/20",

@@ -120,12 +120,12 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.45 }}
           className="font-body text-text-primary/80 text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
         >
-          Final-year CS student building with{" "}
-          <span className="text-accent-cyan">agentic AI</span>,{" "}
+          Tejashwini Malge here, if you have come till here, scroll a little, promise it would be interesting.
+          So, I love talking, building and teaching, currently I am working on{" "}
+          <span className="text-accent-cyan">agentic systems</span>,{" "}
           <span className="text-accent-violet">LLMs</span>, and{" "}
-          <span className="text-accent-emerald">multimodal models</span>. Currently
-          researching vision-language systems at NITK Surathkal and shipping AI
-          products that people actually use.
+          <span className="text-accent-emerald">multimodal systems</span>, also validating my product Aira, check it out below,
+          Talking and teaching are the masala to my Tech.
         </motion.p>
 
         {/* CTA Buttons */}

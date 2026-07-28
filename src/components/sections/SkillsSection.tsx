@@ -80,7 +80,7 @@ const researchAreas = [
   },
   {
     name: "Transformer Architectures",
-    desc: "The layer underneath all of the above — worth understanding properly.",
+    desc: "The layer underneath all of the above worth understanding properly.",
   },
 ];
 

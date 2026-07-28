@@ -27,7 +27,7 @@ const achievements = [
   {
     icon: Globe,
     title: "LinkedIn Community",
-    desc: "Educational content on AI, networking, and career development — 3,000+ professionals apparently find it worth reading.",
+    desc: "Educational content on AI, networking, and career development 3,000+ professionals apparently find it worth reading.",
     stat: "3,000+",
     statLabel: "Professionals",
     gradient: "from-blue-500 to-accent-cyan",
@@ -36,7 +36,7 @@ const achievements = [
   {
     icon: Cpu,
     title: "Products Validated",
-    desc: "AIRA and BlogAgent were both put in front of real users — students, educators, engineers, founders, editors — and reshaped by what came back.",
+    desc: "AIRA and BlogAgent were both put in front of real users students, educators, engineers, founders, editors and reshaped by what came back.",
     stat: "70+",
     statLabel: "Users Interviewed",
     gradient: "from-accent-violet to-accent-pink",
@@ -82,7 +82,7 @@ export default function AchievementsSection() {
         <Trophy className="text-yellow-400 shrink-0" size={32} />
         <div className="relative">
           <p className="font-display font-semibold text-text-primary text-2xl">
-            Researcher, Engineer, Speaker — usually all at once
+            Engineer, Speaker, Mentor — usually all at once
           </p>
           <p className="font-body text-text-secondary text-sm mt-1">
             No single label ever quite fits, so here are three that mostly do.
