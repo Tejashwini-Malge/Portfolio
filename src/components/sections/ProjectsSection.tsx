@@ -30,7 +30,7 @@ const projects: Project[] = [
       "LLM-powered conversation with adaptive questioning, built to help people improve confidence, communication, and interview performance. Validated with 50+ students, educators, trainers, and professionals — their feedback shaped most of what the product looks like today.",
     tech: ["Python", "FastAPI", "Prompt Engineering", "Groq API"],
     github: "https://github.com/Tejashwini-Malge/Aira",
-    demo: "https://aira-k5no.onrender.com/",
+    demo: "https://aira-lonk.onrender.com/",
     demoNote: "First load may take ~30-60s to wake up",
     icon: Cpu,
     gradient: "from-accent-cyan to-blue-600",
