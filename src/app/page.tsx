@@ -4,6 +4,7 @@ import SkillsSection from "@/components/sections/SkillsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import AchievementsSection from "@/components/sections/AchievementsSection";
+import GallerySection from "@/components/sections/GallerySection";
 import ContactSection from "@/components/sections/ContactSection";
 import SectionDivider from "@/components/ui/SectionDivider";
 
@@ -21,6 +22,8 @@ export default function Home() {
       <ExperienceSection />
       <SectionDivider text="oh, and also" />
       <AchievementsSection />
+      <SectionDivider text="and on the side," />
+      <GallerySection />
       <SectionDivider text="so..." />
       <ContactSection />
     </main>
