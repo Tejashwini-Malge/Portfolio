@@ -206,9 +206,9 @@ export default function HeroSection() {
               <Image
                 src="/profile.webp"
                 alt="Tejashwini Malge"
-                width={400}
-                height={500}
-                className="rounded-sm object-cover object-center w-full aspect-[4/5]"
+                width={800}
+                height={1423}
+                className="rounded-sm object-cover object-top w-full aspect-[800/1423]"
                 priority
               />
 
