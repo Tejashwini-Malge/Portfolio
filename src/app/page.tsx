@@ -1,6 +1,5 @@
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
-import RealMeSection from "@/components/sections/RealMeSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
@@ -15,8 +14,6 @@ export default function Home() {
       <HeroSection />
       <SectionDivider text="and then..." />
       <AboutSection />
-      <SectionDivider text="but really," />
-      <RealMeSection />
       <SectionDivider text="also," />
       <SkillsSection />
       <SectionDivider text="here's what i've made" />
