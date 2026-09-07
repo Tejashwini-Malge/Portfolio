@@ -72,7 +72,7 @@ export default function AboutSection() {
               <span className="text-text-primary font-medium">
                 final-year Computer Science student at Srinivas University
               </span>{" "}
-              (CGPA 9.5/10), based in Bidar, Karnataka. I love building
+              (CGPA 9.5/10), based in Mangalore, Karnataka. I love building
               things that think, such as{" "}
               <span className="text-accent-cyan">agentic systems</span>,{" "}
               <span className="text-accent-violet">RAG pipelines</span>,{" "}
@@ -81,10 +81,9 @@ export default function AboutSection() {
             </p>
 
             <p className="font-body text-text-secondary leading-relaxed">
-              These days that splits between applied research generating
-              structured radiology reports from medical images at NITK Surathkal
-              and shipping products, like the agentic NGO transparency platform I
-              work on as an AI Social Impact Fellow.
+              These days that splits between the agentic NGO transparency platform I work
+              on as an AI Social Impact Fellow and learning the architecture beneath these
+              systems. Beyond that, you&apos;d find me in classrooms.
             </p>
           </div>
         </motion.div>
