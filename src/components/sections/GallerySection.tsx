@@ -18,7 +18,6 @@ import {
   Quote,
   Maximize2,
   Lightbulb,
-  Sparkles,
   Heart,
 } from "lucide-react";
 import SectionWrapper from "../ui/SectionWrapper";
@@ -136,6 +135,11 @@ const posterItems: LightboxItem[] = posters.map((p) => ({
   caption: `${p.host} · ${p.date}`,
 }));
 
+/* Posters are stored newest-first; the album reads like flipping pages forward in time. */
+const chronologicalPosters = posters
+  .map((poster, originalIndex) => ({ poster, originalIndex }))
+  .reverse();
+
 const reviewItems: LightboxItem[] = reviews
   .filter((r): r is Review & { image: string } => Boolean(r.image))
   .map((r) => ({
@@ -144,18 +148,20 @@ const reviewItems: LightboxItem[] = reviews
     caption: [r.role, r.source].filter(Boolean).join(" · "),
   }));
 
-/* Each poster hangs at its own angle, like they were pinned up by hand. */
-const PIN_ANGLES = [-2.4, 1.7, -1.1, 2.2, -1.8, 1.2];
+/* Each poster leans just slightly, like a print set down on a page, not pinned to a board. */
+const LEAN_ANGLES = [-1.4, 1.1, -0.9, 1.3, -1.1, 0.9];
 
 const SPRING = { stiffness: 210, damping: 17, mass: 0.7 };
 
 function PosterCard({
   poster,
   index,
+  side,
   onOpen,
 }: {
   poster: Poster;
   index: number;
+  side: "left" | "right";
   onOpen: () => void;
 }) {
   const reduceMotion = useReducedMotion();
@@ -164,8 +170,8 @@ function PosterCard({
   const px = useMotionValue(0);
   const py = useMotionValue(0);
 
-  const rotateX = useSpring(useTransform(py, [-0.5, 0.5], [11, -11]), SPRING);
-  const rotateY = useSpring(useTransform(px, [-0.5, 0.5], [-13, 13]), SPRING);
+  const rotateX = useSpring(useTransform(py, [-0.5, 0.5], [7, -7]), SPRING);
+  const rotateY = useSpring(useTransform(px, [-0.5, 0.5], [-8, 8]), SPRING);
   const lift = useSpring(0, SPRING);
   const glare = useSpring(0, SPRING);
 
@@ -184,8 +190,8 @@ function PosterCard({
 
   const handleEnter = (e: React.PointerEvent<HTMLButtonElement>) => {
     if (reduceMotion || !isMouse(e)) return;
-    lift.set(42);
-    glare.set(0.5);
+    lift.set(30);
+    glare.set(0.4);
   };
 
   const rest = () => {
@@ -197,13 +203,13 @@ function PosterCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 34 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: side === "left" ? -28 : 28 }}
+      whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
+      transition={{ duration: 0.6, delay: (index % 3) * 0.08 }}
       style={{
         perspective: 1100,
-        rotate: reduceMotion ? 0 : PIN_ANGLES[index % PIN_ANGLES.length],
+        rotate: reduceMotion ? 0 : LEAN_ANGLES[index % LEAN_ANGLES.length],
       }}
       className="relative z-0 hover:z-20"
     >
@@ -215,7 +221,7 @@ function PosterCard({
         onPointerLeave={rest}
         onBlur={rest}
         style={{ rotateX, rotateY, z: lift, transformStyle: "preserve-3d" }}
-        className="paper-card group relative w-full rounded-xl p-3 pb-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-ember focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary"
+        className="paper-card group relative w-full max-w-sm rounded-xl p-3 pb-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-ember focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary"
         aria-label={`Open the ${poster.title} poster full size`}
       >
         {/* Tape floats above the paper */}
@@ -233,8 +239,8 @@ function PosterCard({
             src={poster.src}
             alt={`Poster for ${poster.title}, hosted by ${poster.host}`}
             fill
-            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
-            className="object-contain transition-transform duration-500 group-hover:scale-[1.04]"
+            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 40vw, 24vw"
+            className="object-contain transition-transform duration-500 group-hover:scale-[1.04] sepia-[.08] group-hover:sepia-0"
           />
 
           <span className="photo-corner photo-corner-tl" aria-hidden="true" />
@@ -244,7 +250,7 @@ function PosterCard({
 
           <span className="absolute inset-0 flex items-center justify-center bg-[#2c1e12]/0 group-hover:bg-[#2c1e12]/30 transition-colors duration-300">
             <Maximize2
-              size={26}
+              size={24}
               className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow"
             />
           </span>
@@ -257,7 +263,6 @@ function PosterCard({
           <p className="font-body text-xs text-text-secondary mt-2 leading-snug">
             {poster.host}
           </p>
-          <p className="font-mono text-xs text-text-muted mt-1">{poster.date}</p>
         </div>
 
         {/* Light sweeping across the paper as it tilts */}
@@ -329,27 +334,65 @@ export default function GallerySection() {
         }
       />
 
-      {/* ---------- Posters ---------- */}
+      {/* ---------- Posters — an album laid out over time ---------- */}
       {posters.length > 0 && (
         <>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-mono text-xs uppercase tracking-widest text-text-muted mb-6"
+            className="font-mono text-xs uppercase tracking-widest text-text-muted mb-2 text-center"
           >
             Session posters
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-display text-xl text-text-muted/80 mb-12 text-center"
+          >
+            flip through, one page a season
+          </motion.p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 mb-20">
-            {posters.map((poster, i) => (
-              <PosterCard
-                key={poster.src}
-                poster={poster}
-                index={i}
-                onOpen={() => setLightbox({ items: posterItems, index: i })}
-              />
-            ))}
+          <div className="relative max-w-4xl mx-auto mb-24">
+            {/* Album spine — the thread running through every page */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-0 -translate-x-1/2 border-l-2 border-dashed border-text-muted/25 hidden sm:block" />
+
+            <div className="space-y-14 sm:space-y-20">
+              {chronologicalPosters.map(({ poster, originalIndex }, i) => {
+                const side: "left" | "right" = i % 2 === 0 ? "left" : "right";
+                const card = (
+                  <PosterCard
+                    poster={poster}
+                    index={i}
+                    side={side}
+                    onOpen={() => setLightbox({ items: posterItems, index: originalIndex })}
+                  />
+                );
+                return (
+                  <div key={poster.src} className="relative flex flex-col items-center sm:block">
+                    {/* Date stamp pinned to the spine */}
+                    <div className="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                      <span className="font-mono text-[0.65rem] text-accent-ember bg-bg-primary border border-accent-ember/30 border-dashed rounded-full px-3 py-1 whitespace-nowrap shadow-sm">
+                        {poster.date}
+                      </span>
+                    </div>
+
+                    <div className="w-full sm:flex sm:items-center">
+                      <div className={`sm:w-1/2 flex ${side === "left" ? "sm:justify-end sm:pr-10" : "sm:order-2 sm:justify-start sm:pl-10"}`}>
+                        {card}
+                      </div>
+                      <div className="hidden sm:block sm:w-1/2" />
+                    </div>
+
+                    {/* Mobile date stamp */}
+                    <span className="sm:hidden mt-4 font-mono text-[0.65rem] text-accent-ember bg-bg-primary border border-accent-ember/30 border-dashed rounded-full px-3 py-1">
+                      {poster.date}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </>
       )}
@@ -366,7 +409,7 @@ export default function GallerySection() {
             Kind words &amp; good advice
           </motion.p>
 
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 [&>*]:mb-6 [&>*]:break-inside-avoid">
+          <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {reviews.map((review, i) => {
               const lightboxIndex = review.image
                 ? reviewItems.findIndex((item) => item.src === review.image)
@@ -389,13 +432,6 @@ export default function GallerySection() {
                   ) : (
                     <span className="washi-tape" aria-hidden="true" />
                   )}
-
-                  {/* Corner doodle */}
-                  <Sparkles
-                    size={28}
-                    className="absolute top-3 right-3 text-accent-brick/15 rotate-12"
-                    aria-hidden="true"
-                  />
 
                   {review.quote && (
                     <>

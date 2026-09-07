@@ -10,7 +10,7 @@ const experiences = [
     icon: Microscope,
     title: "Research Intern",
     org: "NITK Surathkal · Mangalore, Karnataka",
-    period: "May 2026 — Present",
+    period: "May 2026 — Aug 2026",
     desc: "Surveyed research and thesis literature on deep-learning and multimodal methods to identify limitations and frame the medical-imaging problem for the internship.",
     highlights: ["Vision-Language Models", "Transformers", "Multimodal Medical AI"],
     color: "from-accent-cyan to-blue-600",
