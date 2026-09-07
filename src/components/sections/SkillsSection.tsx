@@ -6,6 +6,14 @@ import SectionHeader from "../ui/SectionHeader";
 
 const skillCategories = [
   {
+    label: "Languages",
+    color: "from-accent-violet to-accent-pink",
+    textColor: "text-accent-violet",
+    borderColor: "border-accent-violet/30",
+    bgColor: "bg-accent-violet/5",
+    skills: ["Python", "SQL", "TypeScript"],
+  },
+  {
     label: "AI & ML",
     color: "from-accent-cyan to-blue-500",
     textColor: "text-accent-cyan",
@@ -15,53 +23,36 @@ const skillCategories = [
       "LLMs",
       "Agentic AI",
       "RAG",
-      "PyTorch",
-      "TensorFlow",
-      "Deep Learning",
-      "Prompt Engineering",
-      "Computer Vision",
-      "VLM",
+      "NLP",
+      "MCP",
       "Transformers",
+      "PyTorch",
+      "Computer Vision",
     ],
   },
   {
-    label: "Languages & Frameworks",
-    color: "from-accent-violet to-accent-pink",
-    textColor: "text-accent-violet",
-    borderColor: "border-accent-violet/30",
-    bgColor: "bg-accent-violet/5",
-    skills: ["Python", "SQL", "FastAPI", "Next.js", "React", "Tailwind CSS", "Prisma ORM"],
-  },
-  {
-    label: "Databases & Tools",
-    color: "from-accent-emerald to-teal-500",
-    textColor: "text-accent-emerald",
-    borderColor: "border-accent-emerald/30",
-    bgColor: "bg-accent-emerald/5",
-    skills: [
-      "PostgreSQL",
-      "Neon PostgreSQL",
-      "Git",
-      "GitHub",
-      "Docker",
-      "Railway",
-      "Render",
-      "Vercel",
-    ],
-  },
-  {
-    label: "Concepts",
+    label: "AI Systems",
     color: "from-accent-pink to-orange-400",
     textColor: "text-accent-pink",
     borderColor: "border-accent-pink/30",
     bgColor: "bg-accent-pink/5",
-    skills: [
-      "System Design",
-      "Agentic System Design",
-      "Multi-Agent Orchestration",
-      "Public Speaking",
-      "Mentorship",
-    ],
+    skills: ["Multi-Agent Systems", "Tool Calling"],
+  },
+  {
+    label: "Development",
+    color: "from-accent-emerald to-teal-500",
+    textColor: "text-accent-emerald",
+    borderColor: "border-accent-emerald/30",
+    bgColor: "bg-accent-emerald/5",
+    skills: ["FastAPI", "Next.js", "React", "PostgreSQL"],
+  },
+  {
+    label: "Tools",
+    color: "from-blue-500 to-accent-violet",
+    textColor: "text-accent-cyan",
+    borderColor: "border-accent-cyan/30",
+    bgColor: "bg-accent-cyan/5",
+    skills: ["Git", "GitHub", "Docker"],
   },
 ];
 
@@ -94,7 +85,7 @@ export default function SkillsSection() {
       />
 
       {/* Category Cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
         {skillCategories.map((cat, ci) => (
           <motion.div
             key={cat.label}

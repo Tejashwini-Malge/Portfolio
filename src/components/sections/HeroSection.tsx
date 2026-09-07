@@ -8,7 +8,7 @@ import { Github, Linkedin, Download, ArrowRight, ChevronDown, Heart } from "luci
 const typingPhrases = [
   "building agentic AI systems",
   "researching vision-language models",
-  "mentoring 750+ students",
+  "mentoring 1000+ students",
   "talking about AI on stage",
 ];
 
@@ -151,7 +151,7 @@ export default function HeroSection() {
           </a>
 
           <a
-            href="/Tejashwini-Malge.pdf"
+            href="/Tejashwini.pdf"
             download
             className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-accent-cyan/40 text-accent-cyan font-medium font-body hover:bg-accent-cyan/10 transition-all duration-300"
           >
@@ -204,7 +204,7 @@ export default function HeroSection() {
               <div className="washi-tape" />
 
               <Image
-                src="/profile.webp"
+                src="/profile.jpeg"
                 alt="Tejashwini Malge"
                 width={800}
                 height={1423}

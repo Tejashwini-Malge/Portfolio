@@ -30,7 +30,7 @@ const pillars = [
   {
     icon: Users,
     title: "Mentor",
-    desc: "Talking to 750+ students about LinkedIn, networking, career, and AI.",
+    desc: "Talking to 1000+ students about LinkedIn, networking, career, and AI.",
     color: "from-accent-emerald to-teal-400",
     glow: "shadow-accent-emerald/20",
   },
@@ -38,7 +38,7 @@ const pillars = [
 
 const stats = [
   { value: "9.5", label: "CGPA / 10" },
-  { value: "750+", label: "Students Mentored" },
+  { value: "1000+", label: "Students Mentored" },
   { value: "3,000+", label: "Community" },
   { value: "4", label: "AI Projects Built" },
 ];

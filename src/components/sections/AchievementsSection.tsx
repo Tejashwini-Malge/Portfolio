@@ -18,8 +18,8 @@ const achievements = [
   {
     icon: Users,
     title: "Guest Trainer",
-    desc: "Delivered AI and communication workshops across colleges and institutions, reaching 750+ students.",
-    stat: "750+",
+    desc: "Delivered AI and communication workshops across colleges and institutions, reaching 1000+ students.",
+    stat: "1000+",
     statLabel: "Students Reached",
     gradient: "from-accent-emerald to-teal-500",
     glow: "shadow-accent-emerald/10",

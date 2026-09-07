@@ -144,7 +144,7 @@ export default function ContactSection() {
               Send a Message
             </a>
             <a
-              href="/Tejashwini-Malge.pdf"
+              href="/Tejashwini.pdf"
               download
               className="flex items-center gap-2 px-8 py-3.5 rounded-full border border-text-muted/30 text-text-secondary hover:text-accent-cyan hover:border-accent-cyan/40 transition-all duration-300 font-body"
             >
