@@ -7,16 +7,6 @@ import SectionHeader from "../ui/SectionHeader";
 
 const experiences = [
   {
-    icon: Microscope,
-    title: "Research Intern",
-    org: "NITK Surathkal · Mangalore, Karnataka",
-    period: "May 2026 — Aug 2026",
-    desc: "Surveyed research and thesis literature on deep-learning and multimodal methods to identify limitations and frame the medical-imaging problem for the internship.",
-    highlights: ["Vision-Language Models", "Transformers", "Multimodal Medical AI"],
-    color: "from-accent-cyan to-blue-600",
-    glow: "border-accent-cyan/20",
-  },
-  {
     icon: ShieldCheck,
     title: "AI Social Impact Fellow",
     org: "Vitainspire · T-Hub, Hyderabad (Remote, Part-time)",
@@ -25,6 +15,16 @@ const experiences = [
     highlights: ["Next.js + TypeScript", "Prisma + Neon PostgreSQL", "Agentic workflows"],
     color: "from-accent-violet to-accent-pink",
     glow: "border-accent-violet/20",
+  },
+  {
+    icon: Microscope,
+    title: "Research Intern",
+    org: "NITK Surathkal · Mangalore, Karnataka",
+    period: "May 2026 — Aug 2026",
+    desc: "Surveyed research and thesis literature on deep-learning and multimodal methods to identify limitations and frame the medical-imaging problem for the internship.",
+    highlights: ["Vision-Language Models", "Transformers", "Multimodal Medical AI"],
+    color: "from-accent-cyan to-blue-600",
+    glow: "border-accent-cyan/20",
   },
   {
     icon: Users,

@@ -74,13 +74,16 @@ const projects: Project[] = [
   },
   {
     title: "SignLanguage",
-    description: "Placeholder — real description coming soon.",
-    longDesc: "Placeholder — details coming soon.",
-    tech: ["TBD"],
+    description:
+      "Real-time sign language detection that reads hand gestures and speaks them aloud.",
+    longDesc:
+      "Tracks hand landmarks from a live camera feed, classifies gestures with a trained neural network, and turns recognised signs into spoken feedback in real time.",
+    tech: ["MediaPipe", "TensorFlow/Keras", "Groq", "gTTS", "Flask-SocketIO"],
+    github: "https://github.com/Tejashwini-Malge/SignLangaugeDetectionUsingCV",
     icon: Hand,
     gradient: "from-accent-pink to-orange-500",
     glow: "hover:shadow-accent-pink/20",
-    tag: "Coming Soon",
+    tag: "Computer Vision",
     kind: "Individual",
     period: "TBD",
   },
