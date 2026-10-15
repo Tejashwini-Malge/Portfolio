@@ -8,7 +8,7 @@ import { Github, Linkedin, Download, ArrowRight, ChevronDown, Heart } from "luci
 const typingPhrases = [
   "building agentic AI systems",
   "researching vision-language models",
-  "mentoring 1000+ students",
+  "mentoring 1300+ students",
   "talking about AI on stage",
 ];
 
