@@ -41,6 +41,8 @@ const speakingEvents = [
     duration: "1 hour, live",
     image: undefined as string | undefined,
     audience: "300+ attendees",
+    link: "https://www.youtube.com/watch?v=HR5YN6jcZ-A&t=2864s",
+    linkText: "Watch Full Session",
     icon: Play,
     gradient: "from-accent-violet to-blue-600",
     glow: "border-accent-violet/20",
