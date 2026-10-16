@@ -13,15 +13,16 @@ import SectionHeader from "../ui/SectionHeader";
  */
 const speakingEvents = [
   {
-    id: "podcast-ai-builders",
+    id: "ai-sisterhood-podcast",
     type: "Podcast Guest",
-    title: "AI Builders Podcast",
+    title: "The AI Sisterhood Podcast — Ep. 9",
     date: "2026",
+    organizer: "The Arthi AI Collective, with Arthi Rajendran",
     description:
       "Discussion on building agentic AI systems, practical applications of LLMs, and lessons from shipping AI products.",
     broadcast: ["YouTube", "Instagram", "LinkedIn", "Facebook"],
     duration: "1 hour, live",
-    image: undefined as string | undefined,
+    image: "/speaking/ai-sisterhood-podcast-ep9.jpeg" as string | undefined,
     platform: "YouTube",
     link: "https://www.youtube.com/live/5BXiNF7RHBM?si=KPrC7A3qwtI98sc0",
     linkText: "Watch Full Episode",
@@ -30,16 +31,16 @@ const speakingEvents = [
     glow: "border-accent-brick/20",
   },
   {
-    id: "live-ai-session",
-    type: "Live Session",
-    title: "Building AI at Scale",
-    date: "2026",
-    organizer: "Tech Community Collective",
+    id: "llms-for-everyone",
+    type: "Community Webinar",
+    title: "LLMs for Everyone: From Chatbots to AI That Thinks With Us",
+    date: "Oct 11, 2026",
+    organizer: "The Arthi AI Collective",
     description:
-      "Real-time demonstration of agentic AI workflows, multimodal systems, and best practices for production AI deployment.",
+      "A community webinar walking through LLMs from the basics — from everyday chatbots to AI systems that reason alongside you.",
     broadcast: ["YouTube", "Instagram", "LinkedIn", "Facebook"],
     duration: "1 hour, live",
-    image: undefined as string | undefined,
+    image: "/speaking/llms-for-everyone-webinar.jpeg" as string | undefined,
     audience: "300+ attendees",
     link: "https://www.youtube.com/watch?v=HR5YN6jcZ-A&t=2864s",
     linkText: "Watch Full Session",
