@@ -49,6 +49,18 @@ interface Review {
 // Newest first. Drop new images in public/gallery/posters/ and add a row.
 const posters: Poster[] = [
   {
+    src: "/speaking/llms-for-everyone-webinar.jpeg",
+    title: "LLMs for Everyone: From Chatbots to AI That Thinks With Us",
+    host: "The Arthi AI Collective — Community Webinar",
+    date: "Oct 2026",
+  },
+  {
+    src: "/speaking/ai-sisterhood-podcast-ep9.jpeg",
+    title: "The AI Sisterhood Podcast — Ep. 9",
+    host: "The Arthi AI Collective, with Arthi Rajendran",
+    date: "Oct 2026",
+  },
+  {
     src: "/gallery/posters/solve-the-right-problem.webp",
     title: "Solve The Right Problem",
     host: "Srinivas University, IET — CSE Dept",
@@ -329,8 +341,8 @@ export default function GallerySection() {
         title="Tejus Gallery"
         subtitle={
           reviews.length > 0
-            ? "Rooms I've been invited into — the posters that went out, and what people said after."
-            : "Rooms I've been invited into, and the posters that went out for them."
+            ? "Rooms I've been invited into — the posters and banners that went out, and what people said after."
+            : "Rooms I've been invited into, and the posters and banners that went out for them."
         }
       />
 
@@ -343,7 +355,7 @@ export default function GallerySection() {
             viewport={{ once: true }}
             className="font-mono text-xs uppercase tracking-widest text-text-muted mb-2 text-center"
           >
-            Session posters
+            Session posters &amp; media
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -354,45 +366,20 @@ export default function GallerySection() {
             flip through, one page a season
           </motion.p>
 
-          <div className="relative max-w-4xl mx-auto mb-24">
-            {/* Album spine — the thread running through every page */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-0 -translate-x-1/2 border-l-2 border-dashed border-text-muted/25 hidden sm:block" />
-
-            <div className="space-y-14 sm:space-y-20">
-              {chronologicalPosters.map(({ poster, originalIndex }, i) => {
-                const side: "left" | "right" = i % 2 === 0 ? "left" : "right";
-                const card = (
-                  <PosterCard
-                    poster={poster}
-                    index={i}
-                    side={side}
-                    onOpen={() => setLightbox({ items: posterItems, index: originalIndex })}
-                  />
-                );
-                return (
-                  <div key={poster.src} className="relative flex flex-col items-center sm:block">
-                    {/* Date stamp pinned to the spine */}
-                    <div className="hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                      <span className="font-mono text-[0.65rem] text-accent-ember bg-bg-primary border border-accent-ember/30 border-dashed rounded-full px-3 py-1 whitespace-nowrap shadow-sm">
-                        {poster.date}
-                      </span>
-                    </div>
-
-                    <div className="w-full sm:flex sm:items-center">
-                      <div className={`sm:w-1/2 flex ${side === "left" ? "sm:justify-end sm:pr-10" : "sm:order-2 sm:justify-start sm:pl-10"}`}>
-                        {card}
-                      </div>
-                      <div className="hidden sm:block sm:w-1/2" />
-                    </div>
-
-                    {/* Mobile date stamp */}
-                    <span className="sm:hidden mt-4 font-mono text-[0.65rem] text-accent-ember bg-bg-primary border border-accent-ember/30 border-dashed rounded-full px-3 py-1">
-                      {poster.date}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
+          <div className="max-w-4xl mx-auto mb-24 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-16 justify-items-center">
+            {chronologicalPosters.map(({ poster, originalIndex }, i) => (
+              <div key={poster.src} className="flex flex-col items-center">
+                <PosterCard
+                  poster={poster}
+                  index={i}
+                  side={i % 2 === 0 ? "left" : "right"}
+                  onOpen={() => setLightbox({ items: posterItems, index: originalIndex })}
+                />
+                <span className="mt-4 font-mono text-[0.65rem] text-accent-ember bg-bg-primary border border-accent-ember/30 border-dashed rounded-full px-3 py-1">
+                  {poster.date}
+                </span>
+              </div>
+            ))}
           </div>
         </>
       )}

@@ -6,11 +6,6 @@ import { Mic, Play } from "lucide-react";
 import SectionWrapper from "../ui/SectionWrapper";
 import SectionHeader from "../ui/SectionHeader";
 
-/*
- * Drop a thumbnail (stream screenshot, cover art, a photo from the session)
- * into public/speaking/ and point `image` at it, e.g. "/speaking/ai-builders-podcast.jpg".
- * Leave `image` undefined for a text-only card — it's optional.
- */
 const speakingEvents = [
   {
     id: "ai-sisterhood-podcast",
@@ -22,7 +17,7 @@ const speakingEvents = [
       "Discussion on building agentic AI systems, practical applications of LLMs, and lessons from shipping AI products.",
     broadcast: ["YouTube", "Instagram", "LinkedIn", "Facebook"],
     duration: "1 hour, live",
-    image: "/speaking/ai-sisterhood-podcast-ep9.jpeg" as string | undefined,
+    image: "/speaking/ai-sisterhood-podcast-ep9.jpeg",
     platform: "YouTube",
     link: "https://www.youtube.com/live/5BXiNF7RHBM?si=KPrC7A3qwtI98sc0",
     linkText: "Watch Full Episode",
@@ -40,7 +35,7 @@ const speakingEvents = [
       "A community webinar walking through LLMs from the basics — from everyday chatbots to AI systems that reason alongside you.",
     broadcast: ["YouTube", "Instagram", "LinkedIn", "Facebook"],
     duration: "1 hour, live",
-    image: "/speaking/llms-for-everyone-webinar.jpeg" as string | undefined,
+    image: "/speaking/llms-for-everyone-webinar.jpeg",
     audience: "300+ attendees",
     link: "https://www.youtube.com/watch?v=HR5YN6jcZ-A&t=2864s",
     linkText: "Watch Full Session",
@@ -73,21 +68,19 @@ export default function SpeakingMediaSection() {
           >
             <div className="washi-tape" />
 
-            {event.image && (
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-5 bg-bg-card">
-                <Image
-                  src={event.image}
-                  alt={`${event.title} — ${event.type}`}
-                  fill
-                  sizes="(max-width: 768px) 92vw, 48rem"
-                  className="object-cover"
-                />
-                <span className="photo-corner photo-corner-tl" aria-hidden="true" />
-                <span className="photo-corner photo-corner-tr" aria-hidden="true" />
-                <span className="photo-corner photo-corner-bl" aria-hidden="true" />
-                <span className="photo-corner photo-corner-br" aria-hidden="true" />
-              </div>
-            )}
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-5 bg-bg-card">
+              <Image
+                src={event.image}
+                alt={`${event.title} — ${event.type}`}
+                fill
+                sizes="(max-width: 768px) 92vw, 48rem"
+                className="object-cover"
+              />
+              <span className="photo-corner photo-corner-tl" aria-hidden="true" />
+              <span className="photo-corner photo-corner-tr" aria-hidden="true" />
+              <span className="photo-corner photo-corner-bl" aria-hidden="true" />
+              <span className="photo-corner photo-corner-br" aria-hidden="true" />
+            </div>
 
             <div className="flex items-start gap-4 mb-4">
               <div
